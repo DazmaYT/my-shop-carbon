@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK MATTER | Artisan Laboratory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="deep-dark-theme">
+
+<header class="premium-header">
+    <div class="header-container">
+        <div class="header-left">
+            <a href="/" class="logo-link">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-img" alt="logo">
+                <div class="logo-text">
+                    <span class="brand-name">DARK MATTER</span>
+                    <span class="brand-sub">ARTISAN LABORATORY</span>
+                </div>
+            </a> 
+        </div>
+
+        <nav class="header-nav">
+            <a href="#catalog" class="nav-item">КАТАЛОГ</a>
+            <a href="#production" class="nav-item">ПРОИЗВОДСТВО</a>
+            <a href="#shipping" class="nav-item">ДОСТАВКА</a>
+        </nav>
+
+        <div class="header-right">
+            <button class="icon-btn" onclick="openPanel('#profile-modal')"><i class="fas fa-user"></i></button>
+            <div class="cart-wrapper">
+                <button class="icon-btn" onclick="openPanel('#cart-modal')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="content-wrapper">
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>DARK<br>MATTER</h1>
+                <p class="hero-descr">ТВОЙ РАЦИОН. ДЛЯ НАСТОЯЩИХ ДЕЛ.<br><span>РУЧНАЯ РАБОТА • ПАВЛОДАР</span></p>
+                <div class="hero-specs">
+                    <div class="spec-item"><span class="spec-label">МАССА НЕТТО</span><span class="spec-value">150г</span></div>
+                    <div class="spec-item"><span class="spec-label">ВКУС</span><span class="spec-value">BLACK CARBON</span></div>
+                    <div class="spec-item"><span class="spec-label">КЛАСС</span><span class="spec-value">PREMIUM</span></div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#catalog" class="btn-main">В КАТАЛОГ</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glow-effect"></div>
+                <img src="{{ url_for('static', filename='images/black.jpg') }}" alt="Black Carbon" class="main-img">
+            </div>
+        </div>
+        <a href="#catalog" class="scroll-down-link"><div class="scroll-down"><i class="fas fa-chevron-down"></i></div></a>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <h2 class="section-title">НАША ЛИНЕЙКА</h2>
+        <div class="product-grid">
+            <div class="card card-black">
+                <div class="img-wrapper"><img src="{{ url_for('static', filename='images/black.jpg') }}" alt="Black Carbon"></div>
+                <h3>BLACK CARBON</h3><p>Чеснок и Укроп</p><div class="price">850 ₸</div>
+                <button class="btn-buy">В КОРЗИНУ</button>
+            </div>
+            <div class="card card-red">
+                <div class="img-wrapper"><img src="{{ url_for('static', filename='images/red.jpg') }}" alt="Red Magma"></div>
+                <h3>RED MAGMA</h3><p>Чили и Вишня</p><div class="price">850 ₸</div>
+                <button class="btn-buy">В КОРЗИНУ</button>
+            </div>
+            <div class="card card-neon">
+                <div class="img-wrapper"><img src="{{ url_for('static', filename='images/neon.jpg') }}" alt="Neon Toxic"></div>
+                <h3>NEON TOXIC</h3><p>Васаби и Лайм</p><div class="price">850 ₸</div>
+                <button class="btn-buy">В КОРЗИНУ</button>
+            </div>
+            <div class="card card-orange">
+                <div class="img-wrapper"><img src="{{ url_for('static', filename='images/orange.jpg') }}" alt="Orange Lava"></div>
+                <h3>ORANGE LAVA</h3><p>Сыр и Бекон</p><div class="price">850 ₸</div>
+                <button class="btn-buy">В КОРЗИНУ</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-grid-section">
+        <div class="info-container">
+            <div class="info-card" id="production">
+                <div class="card-glow"></div>
+                <h2 class="info-title">ПРОИЗВОДСТВО</h2>
+                <div class="info-content">
+                    <p>Производство базируется в <strong>Павлодаре</strong>. Технология медленной инфузии и вакуумная обжарка.</p>
+                    <div class="status-tag"><span class="dot"></span>ПРОЙДЕН КОНТРОЛЬ КАЧЕСТВА</div>
+                </div>
+            </div>
+            <div class="info-card" id="shipping">
+                <div class="card-glow"></div>
+                <h2 class="info-title">ДОСТАВКА</h2>
+                <div class="info-content">
+                    <ul class="delivery-list">
+                        <li><i class="fas fa-bolt"></i> <span><strong>Павлодар:</strong> день в день</span></li>
+                        <li><i class="fas fa-box-open"></i> <span><strong>РК:</strong> InDriver / YandexGO</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="premium-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <span class="brand-name">DARK MATTER</span>
+            <p class="footer-tagline">EST. 2026 • PAVLODAR</p>
+        </div>
+<div class="footer-contacts">
+    <a href="https://t.me/Angel_dazma" target="_blank" class="footer-contact-item" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+        <i class="fab fa-telegram" style="color: #0088cc; font-size: 1.2rem;"></i> 
+        <span style="cursor: pointer;">@Angel_dazma</span>
+    </a>
+</div>
+    </div>
+    <div class="footer-bottom">
+        <div class="copyright-text">© 2026 DARK MATTER PRODUCTION</div>
+        <div class="dev-by">DESIGNED BY NIKITA</div>
+    </div>
+</footer>
+
+<div class="side-panel" id="cart-modal"> 
+    <div class="panel-overlay" onclick="closePanel('#cart-modal')"></div>
+    <div class="panel-content cyber-panel">
+        <div class="panel-header">
+            <span class="close-btn" onclick="closePanel('#cart-modal')">×</span>
+            <h2 class="glitch-header">ВАШ ЗАКАЗ</h2>
+        </div>
+        <div class="scroll-mini" id="cart-items-container" style="flex: 1; overflow-y: auto;">
+            </div>
+        <div class="panel-footer" style="margin-top: 20px; border-top: 1px solid #1a1a1d; padding-top: 20px;">
+            <div class="total-row" style="display: flex; justify-content: space-between; font-weight: 900; margin-bottom: 20px;">
+                <span style="color: #444; font-size: 12px; letter-spacing: 2px;">ИТОГО</span>
+                <span class="total-price"><span id="sum-value">0</span> ₸</span>
+            </div>
+            <button class="btn-cyber" onclick="checkout()">К ОПЛАТЕ</button>
+        </div>
+    </div>
+</div>
+
+<div class="side-panel" id="profile-modal">
+    <div class="panel-overlay" onclick="closePanel('#profile-modal')"></div>
+    <div class="panel-content cyber-panel">
+        <div class="panel-header">
+            <span class="close-btn" onclick="closePanel('#profile-modal')">×</span>
+            <h2 class="glitch-header">ПРОФИЛЬ</h2>
+        </div>
+
+        <div id="auth-login-section" class="auth-section">
+            <div class="auth-inputs">
+                <input type="text" id="login-name" class="dark-input" placeholder="ЛОГИН">
+                <input type="password" id="login-pass" class="dark-input" placeholder="ПАРОЛЬ">
+            </div>
+            <button class="btn-cyber" onclick="loginUser()">ВХОД</button>
+            <p class="auth-alt" style="margin-top: 20px; text-align: center; font-size: 11px; cursor: pointer; color: #888;" onclick="switchAuth('reg')">НЕТ АККАУНТА? <span style="color: #ff2a2a;">СОЗДАТЬ</span></p>
+        </div>
+
+        <div id="auth-reg-section" class="auth-section" style="display:none;">
+            <div class="auth-inputs scroll-mini">
+                <input type="text" id="reg-name" class="dark-input" placeholder="ЛОГИН">
+                <input type="email" id="reg-email" class="dark-input" placeholder="ПОЧТА">
+                <input type="password" id="reg-pass" class="dark-input" placeholder="ПАРОЛЬ">
+                <input type="password" id="reg-pass-confirm" class="dark-input" placeholder="ПОВТОР ПАРОЛЯ">
+            </div>
+            <button class="btn-cyber" onclick="registerUser()">РЕГИСТРАЦИЯ</button>
+            <p class="auth-alt" style="margin-top: 20px; text-align: center; font-size: 11px; cursor: pointer; color: #888;" onclick="switchAuth('login')">ЕСТЬ АККАУНТ? <span style="color: #ff2a2a;">ВОЙТИ</span></p>
+        </div>
+
+        <div id="auth-profile-section" class="auth-section" style="display:none;">
+            <div id="profile-view-section">
+                <div class="avatar-wrapper">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3 id="display-name" class="profile-nickname">ГОСТЬ</h3>
+                
+                <div class="profile-details-grid">
+                    <div class="detail-row">
+                        <span class="label">ТЕЛЕФОН</span>
+                        <span id="view-phone" class="value">НЕ УКАЗАН</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">ЛОКАЦИЯ</span>
+                        <span class="value">ПАВЛОДАР, КАЗАХСТАН</span>
+                    </div>
+                </div>
+
+                <div class="order-history-header">
+                    <i class="fas fa-history"></i> ИСТОРИЯ ЗАКАЗОВ
+                </div>
+                <div id="order-history-list" class="scroll-mini order-history-container">
+                    <div class="empty-history">НЕТ ЗАКАЗОВ</div>
+                </div>
+
+                <div class="profile-footer-actions">
+                    <button class="btn-cyber-outline" onclick="toggleEdit(true)">ИЗМЕНИТЬ</button>
+                    <button class="btn-cyber-danger" onclick="logoutUser()">ВЫЙТИ</button>
+                </div>
+            </div>
+
+            <div id="profile-edit-section" style="display:none;">
+                <div class="auth-inputs scroll-mini">
+                    <div class="input-field">
+                        <label style="font-size:10px; color:#555;">ЛОГИН</label>
+                        <input type="text" id="edit-name" class="dark-input">
+                    </div>
+                    <div class="input-field">
+                        <label style="font-size:10px; color:#555;">ТЕЛЕФОН</label>
+                        <input type="text" id="edit-phone" class="dark-input">
+                    </div>
+                    <div class="input-field">
+                        <label style="font-size:10px; color:#555;">НОВЫЙ ПАРОЛЬ</label>
+                        <input type="password" id="edit-pass" class="dark-input">
+                    </div>
+                </div>
+                <div class="profile-footer-actions">
+                    <button class="btn-cyber" onclick="saveProfileChanges()">СОХРАНИТЬ</button>
+                    <button class="btn-cyber-dark" onclick="toggleEdit(false)">ОТМЕНА</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="side-panel" id="payment-modal">
+    <div class="panel-overlay" onclick="closePanel('#payment-modal')"></div>
+    <div class="panel-content cyber-panel">
+        <div class="panel-header">
+            <span class="close-btn" onclick="closePanel('#payment-modal')">×</span>
+            <h2 class="glitch-header">ОПЛАТА KASPI</h2>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <span style="color: #444; font-size: 11px; letter-spacing: 2px;">СУММА К ОПЛАТЕ</span>
+            <div style="font-size: 32px; font-weight: 900; color: #fff; margin-top: 5px;"><span id="pay-sum">0</span> ₸</div>
+        </div>
+
+<div style="margin-bottom: 20px;">
+    <input type="text" id="kaspi-phone-input" class="dark-input" placeholder="НОМЕР KASPI">
+    <input type="text" id="address-input" class="dark-input" placeholder="АДРЕС ДОСТАВКИ (Улица, дом, кв)" style="margin-top: 10px;">
+</div>
+        <div style="background: #111; border: 1px solid #222; padding: 15px; font-size: 11px; color: #aaa; text-align: center; margin-bottom: 20px;">
+            После оформления заказа мы выставим счет на указанный номер Kaspi.
+        </div>
+
+        <button class="btn-cyber" id="confirm-pay-btn" onclick="confirmPayment()">ОФОРМИТЬ ЗАКАЗ</button>
+    </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
